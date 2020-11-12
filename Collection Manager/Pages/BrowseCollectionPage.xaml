@@ -1,0 +1,67 @@
+﻿<Page x:Class="Collection_Manager.Pages.BrowseCollectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:uc="clr-namespace:Collection_Manager.UserControls"
+      xmlns:local="clr-namespace:Collection_Manager.Pages"
+      xmlns:ce="clr-namespace:Collection_Manager.CustomElements"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1250"
+      Title="BrowseCollectionPage"
+      Background="White"
+      ShowsNavigationUI="False">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Width="340" Height="425" Margin="0, 0, 690, 0">
+            <ItemsControl>
+                <Label Content="Name:"/>
+                <ce:PlaceholderBox x:Name="NameInput" Placeholder="Enter card name..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Card Color:" Margin="0, 10, 0, 0"/>
+                <uc:ColorSelection x:Name="CardColors"/>
+                <Label Content="Color Identity:" Margin="0, 10, 0, 0"/>
+                <uc:ColorSelection x:Name="ColorIdentity"/>
+                <Label Content="Rarity:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="RarityInput" Placeholder="Enter card rarity..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Type:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="TypeInput" Placeholder="Enter card type..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Converted Mana Cost:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="CmcInput" Placeholder="Enter card cmc..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Oracle Text:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="OracleTextInput" Placeholder="Enter card oracle text..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Mana Cost:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="ManaCostInput" Placeholder="Enter card cost..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Mana Production:" Margin="0, 10, 0, 0"/>
+                <uc:ColorSelection x:Name="ManaProduction"/>
+                <Label Content="Power:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="PowerInput" Placeholder="Enter card power..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Toughness:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="ToughnessInput" Placeholder="Enter card toughness..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Loyalty:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="LoyaltyInput" Placeholder="Enter card loyalty..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <Label Content="Quantity:" Margin="0, 10, 0, 0"/>
+                <ce:PlaceholderBox x:Name="QuantityInput" Placeholder="Enter card quantity..." Width="300" Height="30" FontSize="15" VerticalContentAlignment="Center"/>
+                <CheckBox Name="OnlyAvailable" Content="Only cards that are available." Margin="0, 10, 0, 0"/>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Image Name="CardPreview" Width="300" Height="425" Margin="0, 0, 0, 0"/>
+        <TextBlock Name="OracleText" Width="300" Height="425" FontSize="25" TextWrapping="Wrap" Margin="650, 0, 0, 0"/>
+        <Button Name="Backward" FontFamily="Marlett" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" Width="50" Height="50" FontSize="50" Content="3" Margin="0, 500, 250, 0"/>
+        <Button Name="Forward" FontFamily="Marlett" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" Width="50" Height="50" FontSize="50" Content="4" Margin="250, 500, 0, 0"/>
+        <TextBlock Width="175" Height="40" FontSize="15" Margin="0, 500, 0, 0" TextAlignment="Center">
+            <Run x:Name="Amount" Text="Amount: N/A"/>
+            <LineBreak/>
+            <Run x:Name="Used" Text="Used: N/A"/>
+        </TextBlock>
+        <Label Name="ResultNumber" Content="Result N/A of N/A" FontSize="20" Width="300" Height="35" HorizontalContentAlignment="Center" Margin="0, 0, 0, 460"/>
+
+        <Button Name="Clear" Content="Clear" Width="125" Height="50" FontSize="25" Margin="0, 500, 905, 0"/>
+        <Button Name="Random" Background="Transparent" BorderBrush="Transparent" Width="50" Height="50" FontSize="25" Margin="0, 500, 690, 0">
+            <Image Source="/Assets/random.png"/>
+        </Button>
+        <Button Name="Search" Content="Search" Width="125" Height="50" FontSize="25" Margin="0, 500, 475, 0"/>
+
+        <TextBlock Name="Error" Width="300" Height="25" FontSize="15" Foreground="Red" TextAlignment="Center" TextWrapping="Wrap" Margin="0, 610, 0, 0"/>
+    </Grid>
+</Page>

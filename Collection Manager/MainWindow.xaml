@@ -1,0 +1,112 @@
+﻿<Window x:Class="Collection_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Collection_Manager"
+        xmlns:ce="clr-namespace:Collection_Manager.CustomElements"
+        mc:Ignorable="d"
+        Title="Collection Manager" Height="700" Width="1250" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Menu Name="Menu" Height="20" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Name="LoadCollectionButton" Header="Load from file" InputGestureText="Ctrl+O">
+                    <MenuItem.Icon>
+                        <Image Source="Assets/load-file.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="ExportCollectionButton" Header="Export as Tcgplayer" InputGestureText="Ctrl+S">
+                    <MenuItem.Icon>
+                        <Image Source="Assets/export-file.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Name="LandCalculatorButton" Header="Land Calculator" InputGestureText="Ctrl+L">
+                    <MenuItem.Icon>
+                        <Image Source="Assets/land.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Name="ComputerIp" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="Assets/ip.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Windows">
+                <MenuItem Name="BrowseCollectionButton" Header="Browse Collection" InputGestureText="Ctrl+B">
+                    <MenuItem.Icon>
+                        <Image Source="Assets\search.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="EditCollectionButton" Header="Edit Collection" InputGestureText="Ctrl+E">
+                    <MenuItem.Icon>
+                        <Image Source="Assets\edit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="DeckBuilderButton" Header="Deck Builder" InputGestureText="Ctrl+D">
+                    <MenuItem.Icon>
+                        <Image Source="Assets\deck-builder.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Name="ShareButton" Header="Share">
+                <MenuItem Name="EditFriendsButton" Header="Edit Friends">
+                    <MenuItem.Icon>
+                        <Image Source="Assets\edit-users.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="User">
+                <MenuItem Name="ChangeViewButton" Header="ChangeView">
+                    <MenuItem.Icon>
+                        <Image Source="Assets\users.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="My Collection">
+                        <MenuItem.Icon>
+                            <Image Source="Assets\user.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Name="LogoutButton" Header="Logout">
+                    <MenuItem.Icon>
+                        <Image Source="Assets\logout.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Name="DeckButton" Header="Deck">
+                <MenuItem Name="LoadDeckButton" Header="Load from file">
+                    <MenuItem.Icon>
+                        <Image Source="Assets/load-file.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="ExportDeckButton" Header="Export as Tcgplayer">
+                    <MenuItem.Icon>
+                        <Image Source="Assets/export-file.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Name="ModifyCollection" Header="Modify Collection" IsCheckable="True"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ce:CustomCommands.EditCollection" Executed="MoveToEditCollection"/>
+        <CommandBinding Command="ce:CustomCommands.BrowseCollection" Executed="MoveToBrowseCollection"/>
+        <CommandBinding Command="ce:CustomCommands.DeckBuilder" Executed="MoveToDeckBuilder"/>
+        <CommandBinding Command="ce:CustomCommands.LoadFile" Executed="LoadCollection"/>
+        <CommandBinding Command="ce:CustomCommands.ExportFile" Executed="ExportCollection"/>
+        <CommandBinding Command="ce:CustomCommands.LandCalculator" Executed="LaunchLandCalculator"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="E" Modifiers="Control" Command="ce:CustomCommands.EditCollection"/>
+        <KeyBinding Key="B" Modifiers="Control" Command="ce:CustomCommands.BrowseCollection"/>
+        <KeyBinding Key="D" Modifiers="Control" Command="ce:CustomCommands.DeckBuilder"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="ce:CustomCommands.LoadFile"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="ce:CustomCommands.ExportFile"/>
+        <KeyBinding Key="L" Modifiers="Control" Command="ce:CustomCommands.LandCalculator"/>
+    </Window.InputBindings>
+</Window>

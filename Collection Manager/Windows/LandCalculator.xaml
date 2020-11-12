@@ -1,0 +1,43 @@
+﻿<Window x:Class="Collection_Manager.Windows.LandCalculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Collection_Manager.Windows"
+        xmlns:ce="clr-namespace:Collection_Manager.CustomElements"
+        mc:Ignorable="d"
+        Title="LandCalculator" Height="575" Width="750" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Icon="/Assets/land.png">
+    <Grid>
+        <Label Name="Tips" Content="Tip: click Enter to calculate and Escape to clear" Foreground="Green" HorizontalContentAlignment="Center" Height="30" FontSize="15" Margin="0, 0, 0, 475"/>
+
+        <Image Source="/Assets/white.png" Width="100" Height="100" Margin="0, 0, 500, 300"/>
+        <Image Source="/Assets/blue.png" Width="100" Height="100" Margin="0, 0, 250, 300"/>
+        <Image Source="/Assets/black.png" Width="100" Height="100" Margin="0, 0, 0, 300"/>
+        <Image Source="/Assets/red.png" Width="100" Height="100" Margin="250, 0, 0, 300"/>
+        <Image Source="/Assets/green.png" Width="100" Height="100" Margin="500, 0, 0, 300"/>
+
+        <ce:PlaceholderBox x:Name="WhiteInput" Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Placeholder="White symbols" FontSize="15" Margin="0, 0, 500, 150"/>
+        <ce:PlaceholderBox x:Name="BlueInput" Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Placeholder="Blue symbols" FontSize="15" Margin="0, 0, 250, 150"/>
+        <ce:PlaceholderBox x:Name="BlackInput" Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Placeholder="Black symbols" FontSize="15" Margin="0, 0, 0, 150"/>
+        <ce:PlaceholderBox x:Name="RedInput" Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Placeholder="Red symbols" FontSize="15" Margin="250, 0, 0, 150"/>
+        <ce:PlaceholderBox x:Name="GreenInput" Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Placeholder="Green symbols" FontSize="15" Margin="500, 0, 0, 150"/>
+
+        <ComboBox Name="Type" Width="275" Height="50" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0, 0, 325, 0">
+            <ComboBoxItem Name="Lands" Content="Land Amount" HorizontalContentAlignment="Center"/>
+            <ComboBoxItem Name="NonLands" Content="Non-Land Amount" HorizontalContentAlignment="Center"/>
+        </ComboBox>
+        <ce:PlaceholderBox x:Name="AmountInput" Placeholder="Enter amount..." Width="275" Height="50" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="325, 0, 0, 0"/>
+
+        <Label Name="Plains" Content="0" Width="100" Height="40" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0, 125, 500, 0"/>
+        <Label Name="Island" Content="0" Width="100" Height="40" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0, 125, 250, 0"/>
+        <Label Name="Swamp" Content="0" Width="100" Height="40" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0, 125, 0, 0"/>
+        <Label Name="Mountain" Content="0" Width="100" Height="40" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="250, 125, 0, 0"/>
+        <Label Name="Forest" Content="0" Width="100" Height="40" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="500, 125, 0, 0"/>
+
+        <Image Source="/Assets/plains.png" Width="100" Height="140" Margin="0, 325, 500, 0"/>
+        <Image Source="/Assets/island.png" Width="100" Height="140" Margin="0, 325, 250, 0"/>
+        <Image Source="/Assets/swamp.png" Width="100" Height="140" Margin="0, 325, 0, 0"/>
+        <Image Source="/Assets/mountain.png" Width="100" Height="140" Margin="250, 325, 0, 0"/>
+        <Image Source="/Assets/forest.png" Width="100" Height="140" Margin="500, 325, 0, 0"/>
+    </Grid>
+</Window>
